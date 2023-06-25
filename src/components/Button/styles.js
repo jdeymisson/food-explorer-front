@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.button`
   width: 100%;
   height: 4.8rem;
-  
+  padding: 4px 8px;
   border: none;
   border-radius: 0.8rem;
   background: ${({ theme }) => theme.COLORS.RED};
