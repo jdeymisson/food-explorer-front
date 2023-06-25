@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { FaAngleRight, FaTrashAlt } from "react-icons/fa";
-
+import { FaAngleRight } from "react-icons/fa";
+import Pencil from "../../assets/Pencil.svg"
 import { Button } from "../Button";
 
 import heart from "../../assets/heart.svg";
@@ -53,21 +53,11 @@ export function Card({ data, ...rest }) {
     navigate(`/edit/${id}`);
   }
 
-  async function handleRemoveDish() {
-    const confirm = window.confirm("Deseja realmente remover esse prato?");
-
-    if (confirm) {
-      console.log(data.id);
-      await api.delete(`/dishes/${data.id}`);
-      location.reload();
-    }
-  }
-
   return (
     <Container {...rest}>
       {user.isAdmin ? (
-        <button onClick={handleRemoveDish}>
-          <FaTrashAlt size={25} />
+        <button onClick={() => handleEditDish(data.id)}>
+          <img src={Pencil} />
         </button>
       ) : (
         <button
@@ -86,11 +76,7 @@ export function Card({ data, ...rest }) {
 
       <a
         type="button"
-        onClick={
-          user.isAdmin
-            ? () => handleEditDish(data.id)
-            : () => handleDetails(data.id)
-        }
+        onClick={() => handleDetails(data.id)}
       >
         <h3>
           {data.title} <FaAngleRight />

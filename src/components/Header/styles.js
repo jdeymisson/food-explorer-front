@@ -143,6 +143,10 @@ export const Favorites = styled.button`
   background: none;
   border: none;
   font-size: 1.6rem;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
 `
 export const NewDish = styled(Link)`
   background-color: ${({ theme }) => theme.COLORS.RED};
@@ -150,7 +154,7 @@ export const NewDish = styled(Link)`
   padding-inline: 1.2rem;
   border-radius: 0.5rem;
   height: 4.8rem;
-  width: 100%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -159,6 +163,7 @@ export const NewDish = styled(Link)`
     background-color: transparent;
     border-radius: 0;
     border-bottom: 2px solid ${({ theme }) => theme.COLORS.BACKGROUND_400};
+     width: 100%;
   }
 `
 
@@ -195,7 +200,7 @@ export const Search = styled.div`
 `
 
 export const Button = styled.button`
-  width: 100%;
+  width: 50%;
   height: 4.6rem;
   border: none;
   border-radius: 0.5rem;
@@ -215,6 +220,7 @@ export const Button = styled.button`
 
   @media (max-width: 768px) {
     background-color: transparent;
+    width: 100%;
     border-radius: 0;
     border-bottom: 2px solid ${({ theme }) => theme.COLORS.BACKGROUND_400};
 
